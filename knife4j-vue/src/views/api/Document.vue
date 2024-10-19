@@ -11,11 +11,11 @@
           </span>
         </a-col>
         <a-col :span="2" :id="'btnCopyMethod' + api.id" class="knife4j-api-copy-address" v-html="$t('doc.copyMethod')">
-          复制接口</a-col>
-        <a-col :span="2" :id="'btnCopyMarkdown' + api.id" class="knife4j-api-copy-address" v-html="$t('doc.copy')">复制文档
+          Copy method</a-col>
+        <a-col :span="2" :id="'btnCopyMarkdown' + api.id" class="knife4j-api-copy-address" v-html="$t('doc.copy')">Copy document
         </a-col>
         <a-col :span="2" :id="'btnCopyAddress' + api.id" class="knife4j-api-copy-address" v-html="$t('doc.copyHash')">
-          复制地址</a-col>
+          Copy address</a-col>
       </a-row>
       <a-row :class="'knife4j-api-' + api.methodType.toLowerCase()">
         <div class="knife4j-api-summary">
@@ -28,13 +28,13 @@
       <a-row class="knife4j-api-row">
         <a-col :span="12">
           <a-row>
-            <a-col class="api-basic-title" :span="6" v-html="$t('doc.produces')">请求数据类型</a-col>
+            <a-col class="api-basic-title" :span="6" v-html="$t('doc.produces')">Request data type</a-col>
             {{ contentType }}
           </a-row>
         </a-col>
         <a-col :span="12">
           <a-row>
-            <a-col class="api-basic-title" :span="6" v-html="$t('doc.consumes')">响应数据类型</a-col>
+            <a-col class="api-basic-title" :span="6" v-html="$t('doc.consumes')">Response data type</a-col>
             {{ api.produces }}
           </a-row>
         </a-col>
@@ -43,26 +43,26 @@
     <!-- <a-divider class="divider" /> -->
     <div v-if="api.author">
       <div class="api-title" v-html="$t('doc.author')">
-        开发者
+        Developer
       </div>
       <div v-if="api.author" v-html="api.author" class="api-body-desc"></div>
     </div>
     <!--接口描述-->
     <div v-if="api.description">
       <div class="api-title" v-html="$t('doc.des')">
-        接口描述
+        Interface description
       </div>
       <div v-if="api.description" v-html="api.description" class="api-body-desc"></div>
     </div>
     <!--请求示例-->
     <div v-if="api.requestValue">
       <div class="api-title" v-html="$t('doc.requestExample')">
-        请求示例
+        Request example
       </div>
       <editor-show :value="api.requestValue" :xmlMode="api.xmlRequest"></editor-show>
     </div>
     <div class="api-title" v-html="$t('doc.params')">
-      请求参数
+      Request parameters
     </div>
     <a-table :defaultExpandAllRows="expanRows" :columns="columns" :dataSource="reqParameters" rowKey="id" size="small"
       :pagination="page">
@@ -84,7 +84,7 @@
     </a-table>
     <div v-if="responseCodeDisplayStatus">
       <div class="api-title" v-html="$t('doc.response')">
-        响应状态
+        Response status
       </div>
       <a-table :defaultExpandAllRows="expanRows" :columns="responseStatuscolumns" :dataSource="api.responseCodes"
         rowKey="code" size="small" :pagination="page">
@@ -104,7 +104,7 @@
           <!--判断响应头-->
           <div v-if="resp.responseHeaderParameters">
             <div class="api-title" v-html="$t('doc.responseHeaderParams')">
-              响应Header
+              Response Header
             </div>
             <a-table :defaultExpandAllRows="expanRows" :columns="responseHeaderColumns"
               :dataSource="resp.responseHeaderParameters" rowKey="id" size="small" :pagination="page">
@@ -112,7 +112,7 @@
           </div>
           <!--响应参数-->
           <div class="api-title" v-html="$t('doc.responseParams')">
-            响应参数
+            Response parameters
           </div>
           <a-table :defaultExpandAllRows="expanRows" :columns="responseParametersColumns" :dataSource="resp.data"
             rowKey="id" size="small" :pagination="page">
@@ -121,7 +121,7 @@
             </template>
           </a-table>
           <div class="api-title" v-html="$t('doc.responseExample')">
-            响应示例
+            Response example
           </div>
           <a-row :id="'knife4jDocumentShowEditor' + api.id + resp.code">
             <editor-show @showDescription="showResponseEditFieldDescription" :value="
@@ -137,7 +137,7 @@
       <!--判断响应头-->
       <div v-if="api.responseHeaderParameters">
         <div class="api-title" v-html="$t('doc.responseHeaderParams')">
-          响应Header
+          Response Header
         </div>
         <a-table :defaultExpandAllRows="expanRows" :columns="responseHeaderColumns"
           :dataSource="api.responseHeaderParameters" rowKey="id" size="small" :pagination="page">
@@ -145,7 +145,7 @@
       </div>
       <!--响应参数-->
       <div class="api-title" v-html="$t('doc.responseParams')">
-        响应参数
+        Response parameters
       </div>
       <a-table :defaultExpandAllRows="expanRows" :columns="responseParametersColumns" :dataSource="multipData.data"
         rowKey="id" size="small" :pagination="page">
@@ -154,7 +154,7 @@
         </template>
       </a-table>
       <div class="api-title" v-html="$t('doc.responseExample')">
-        响应示例
+        Response example
       </div>
       <a-row :id="'knife4jDocumentShowEditor' + api.id">
         <editor-show @showDescription="showResponseEditFieldDescription" :value="
@@ -413,7 +413,7 @@ export default {
             //  过滤掉忽略参数
             .filter(
               ({ name }) =>
-                !ignoreParameterAllKeys.includes(name) 
+                !ignoreParameterAllKeys.includes(name)
             )
         ); */
         // console.log(data);
@@ -699,7 +699,7 @@ export default {
       if (rcodes != null && rcodes != undefined) {
         for(let i=0;i<rcodes.length;i++){
           let rc=rcodes[i];
-          
+
           // 遍历
           if (rc.schema != undefined && rc.schema != null) {
             var respdata = [];
@@ -783,7 +783,7 @@ export default {
               //不存在schema，直接赋值
               that.multipData=rc;
             }
-            
+
           }
         }
         var multipKeys = Object.keys(that.multipData);

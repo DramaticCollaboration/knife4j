@@ -2,7 +2,7 @@
   <a-layout-content class="knife4j-body-content">
     <div class="authorize">
       <a-row>
-        <a-button type="primary" @click="resetAuth" v-html="$t('auth.cancel')">注销</a-button>
+        <a-button type="primary" @click="resetAuth" v-html="$t('auth.cancel')">Log out</a-button>
       </a-row>
       <a-row v-if="securityKeyFlag" style="margin-top:15px;">
         <a-table size="small" :columns="columns" :dataSource="securityArr" :pagination="pagination" bordered>

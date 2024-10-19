@@ -6,7 +6,7 @@ const constants = {
   globalParameter: 'Knife4jOfficeParameter',
   // 全局离线参数表头
   globalParameterTableColumns: [{
-    title: '参数名称',
+    title: 'Parameter name',
     dataIndex: 'name',
     width: '15%',
     scopedSlots: {
@@ -14,7 +14,7 @@ const constants = {
     }
   },
   {
-    title: '参数值',
+    title: 'Parameter value',
     className: 'column-money',
     dataIndex: 'value',
     width: '65%',
@@ -23,7 +23,7 @@ const constants = {
     }
   },
   {
-    title: '参数类型',
+    title: 'Parameter type',
     dataIndex: 'in',
     width: '10%',
     scopedSlots: {
@@ -31,7 +31,7 @@ const constants = {
     }
   },
   {
-    title: '操作',
+    title: 'Operation',
     dataIndex: 'operation',
     scopedSlots: {
       customRender: 'operation'
@@ -70,7 +70,7 @@ const constants = {
     enableSwaggerBootstrapUi: false, // 是否开启swaggerBootstrapUi增强
     treeExplain: true,
 
-    language: 'zh-CN' // 默认语言版本
+    language: 'zhen-US' // 默认语言版本
   },
   defaultSettings: {
     enableDebug: true,// 是否开启Debug调试栏
@@ -102,7 +102,7 @@ const constants = {
     enableCacheOpenApiTable: false, // 是否开启缓存已打开的api文档
     enableHost: false,// 是否启用Host
     enableHostText: '',// 启用Host后文本
-    language: 'zh-CN' // 默认语言版本
+    language: 'en-US' // 默认语言版本
   },
   // 增强配置
   defaultPlusSettings: {
@@ -133,7 +133,7 @@ const constants = {
     enableCacheOpenApiTable: false, // 是否开启缓存已打开的api文档
     enableHost: false,// 是否启用Host
     enableHostText: '',// 启用Host后文本
-    language: 'zh-CN' // 默认语言版本
+    language: 'en-US' // 默认语言版本
   },
   debugRequestHeaders: ['Accept',
     'Accept-Charset',
@@ -298,7 +298,7 @@ const constants = {
   }
   ],
   debugRequestHeaderColumn: [{
-    title: '请求头',
+    title: 'Request header',
     dataIndex: 'name',
     width: '20%',
     scopedSlots: {
@@ -306,14 +306,14 @@ const constants = {
     }
   },
   {
-    title: '内容',
+    title: 'Content',
     dataIndex: 'content',
     scopedSlots: {
       customRender: 'headerValue'
     }
   },
   {
-    title: '操作',
+    title: 'Operation',
     dataIndex: 'operation',
     width: '10%',
     scopedSlots: {
@@ -322,7 +322,7 @@ const constants = {
   }
   ],
   debugFormRequestHeader: [{
-    title: '参数名称',
+    title: 'Parameter name',
     dataIndex: 'name',
     width: '20%',
     scopedSlots: {
@@ -330,7 +330,7 @@ const constants = {
     }
   },
   {
-    title: '类型',
+    title: 'Type',
     dataIndex: 'type',
     width: '12%',
     scopedSlots: {
@@ -338,14 +338,14 @@ const constants = {
     }
   },
   {
-    title: '参数值',
+    title: 'Parameter value',
     dataIndex: 'content',
     scopedSlots: {
       customRender: 'formValue'
     }
   },
   {
-    title: '操作',
+    title: 'Operation',
     dataIndex: 'operation',
     width: '10%',
     scopedSlots: {
@@ -354,7 +354,7 @@ const constants = {
   }
   ],
   debugUrlFormRequestHeader: [{
-    title: '参数名称',
+    title: 'Parameter name',
     dataIndex: 'name',
     width: '20%',
     scopedSlots: {
@@ -362,14 +362,14 @@ const constants = {
     }
   },
   {
-    title: '参数值',
+    title: 'Parameter value',
     dataIndex: 'content',
     scopedSlots: {
       customRender: 'urlFormValue'
     }
   },
   {
-    title: '操作',
+    title: 'Operation',
     dataIndex: 'operation',
     width: '10%',
     scopedSlots: {

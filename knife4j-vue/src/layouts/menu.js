@@ -8,7 +8,7 @@ function isUrl(path) {
 
 const menuData = [{
     key: 'kmain',
-    name: '主页',
+    name: 'Home',
     icon: 'icon-home',
     path: 'home',
   }, {
@@ -18,24 +18,24 @@ const menuData = [{
     path: 'swaggermodels',
   }, {
     key: 'documentManager',
-    name: '文档管理',
+    name: 'Document management',
     icon: 'icon-zdlxb',
     path: 'documentManager',
     children: [{
         key: 'anlaysisPage',
-        name: '全局参数设置',
+        name: 'Global parameter settings',
         component: 'Hello2',
         path: 'hello'
       },
       {
         key: 'monitorPage',
-        name: '离线文档(Md)',
+        name: 'Offline documents(Md)',
         component: 'Hello2',
         path: 'hello1'
       },
       {
         key: 'workspacePage',
-        name: '个性化设置',
+        name: 'Personalization',
         component: 'Hello2',
         path: 'hello2'
         // hideInBreadcrumb: true,
@@ -50,19 +50,19 @@ const menuData = [{
     path: 'dashboard',
     children: [{
         key: 'anlaysisPage',
-        name: '分析页',
+        name: 'Analysis page',
         component: 'Hello2',
         path: 'hello'
       },
       {
         key: 'monitorPage',
-        name: '监控页',
+        name: 'Monitoring page',
         component: 'Hello2',
         path: 'hello1'
       },
       {
         key: 'workspacePage',
-        name: '工作台',
+        name: 'Workbench',
         component: 'Hello2',
         path: 'hello2'
         // hideInBreadcrumb: true,
@@ -72,24 +72,24 @@ const menuData = [{
   },
   {
     key: 'form',
-    name: '表单页',
+    name: 'Form page',
     icon: 'form',
     path: 'form',
     children: [{
         key: 'basicForm',
-        name: '基础表单',
+        name: 'Basic form',
         component: 'Hello2',
         path: 'hello3'
       },
       {
         key: 'setupForm',
-        name: '分步表单',
+        name: 'step by step form',
         component: 'Hello2',
         path: 'hello5'
       },
       {
         key: 'advanceForm',
-        name: '高级表单',
+        name: 'Advanced forms',
         authority: 'admin',
         component: 'Hello2',
         path: 'hello4'

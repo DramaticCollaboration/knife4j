@@ -17,9 +17,6 @@
             <a-icon type="delete" /> <span v-html="$t('cacheText')"></span>
           </a-menu-item>
           <a-menu-divider />
-          <a-menu-item key="logout" @click="changeZh">
-            <a-icon type="environment" /> 简体中文
-          </a-menu-item>
           <a-menu-item key="triggerError" @click="changeEn">
             <a-icon type="environment" /> English
           </a-menu-item>
@@ -83,13 +80,6 @@ export default {
     return {};
   },
   methods: {
-    changeZh() {
-      // 中文
-      // console.log(this);
-      this.$i18n.locale = "zh-CN";
-      this.$store.dispatch("globals/setLang", "zh-CN");
-      this.$localStore.setItem(constant.globalI18nCache, "zh-CN");
-    },
     changeEn() {
       // 英文
       // console.log(this);
@@ -121,7 +111,7 @@ export default {
       try {
         this.$localStore.clear();
       } catch (error) { }
-      this.$message.info("清除本地缓存成功");
+      this.$message.info("Cleared local cache successfully");
     }
   }
 };

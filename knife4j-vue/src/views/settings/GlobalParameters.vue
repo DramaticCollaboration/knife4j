@@ -3,16 +3,16 @@
     <a-row class="globalparameters">
       <a-row class="gptips" v-html="$t('global.note')">
         Knife4j
-        提供全局参数Debug功能,目前默认提供header(请求头)、query(form)两种方式的入参.
+        Provides global parameter debugging function. Currently, two methods of input parameters, header (request header) and query (form), are provided by default.
         <br /><br />
 
-        在此添加全局参数后,默认Debug调试tab页会带上该参数
+        After adding global parameters here, the default Debug tab page will bring this parameter.
       </a-row>
     </a-row>
     <a-row class="globalparameters">
       <a-button type="primary" @click="addGlobalParameters">
         <a-icon type="plus" />
-        <span v-html="$t('global.add')">添加参数</span>
+        <span v-html="$t('global.add')">Add parameters</span>
       </a-button>
     </a-row>
     <a-row class="globalparameters">
@@ -20,7 +20,7 @@
         bordered>
         <a-row slot="operation" slot-scope="text,record">
           <a-button icon="delete" type="danger" @click="deleteParam(record)" style="margin-left:10px;"
-            v-html="$t('global.delete')">删除</a-button>
+            v-html="$t('global.delete')">Delete</a-button>
         </a-row>
         <template slot="paramContentLabel" slot-scope="text,record">
           <a-textarea @change="headerContentChange" :data-key="record.pkid" :defaultValue="text"
@@ -54,7 +54,7 @@
           <a-select v-decorator="[
             'in',
             {
-              rules: [{ required: true, message: '请选择参数类型' }],
+              rules: [{ required: true, message: 'Please select parameter type' }],
               initialValue: 'header'
             }
           ]">
@@ -79,7 +79,7 @@ export default {
   },
   data() {
     return {
-      modelTitle: "新增参数",
+      modelTitle: "New parameters",
       columns: [],
       visible: false,
       pagination: false,
@@ -189,7 +189,7 @@ export default {
         this.globalParameters = newArrs;
         this.storeGlobalParameters();
       } else {
-        gpInstance.$message.info("参数已存在,不可重复添加");
+        gpInstance.$message.info("The parameter already exists and cannot be added repeatedly.");
         this.globalParameters = [];
         setTimeout(function () {
           that.globalParameters = tmpArrs;
@@ -234,7 +234,7 @@ export default {
             });
             this.visible = false;
           } else {
-            gpInstance.$message.info("参数已存在,不可重复添加");
+            gpInstance.$message.info("The parameter already exists and cannot be added repeatedly.");
           }
         }
       });

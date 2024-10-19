@@ -103,7 +103,7 @@ function SwaggerBootstrapUi(options) {
   } else {
     this.url = options.url || 'swagger-resources';
   }
-  this.i18n = options.i18n || 'zh-CN';
+  this.i18n = options.i18n || 'en-US';
   //  是否Knife4jAggregationDesktop
   this.desktop = options.desktop || false;
   this.desktopCode = null;
@@ -190,7 +190,7 @@ function SwaggerBootstrapUi(options) {
     enableCacheOpenApiTable: false, // 是否开启缓存已打开的api文档
     enableHost: false,// 是否启用Host
     enableHostText: '',// 启用Host后文本
-    language: options.i18n || 'zh-CN' // 默认语言版本
+    language: options.i18n || 'en-US' // 默认语言版本
   };
   // SwaggerBootstrapUi增强注解地址
   this.extUrl = '/v2/api-docs';
@@ -260,7 +260,7 @@ SwaggerBootstrapUi.prototype.initRequestParameters = function () {
       }
     }
   }
-  that.log('请求参数========================================');
+  that.log('Request parameters========================================');
   that.log(that.requestParameter);
 }
 
@@ -272,7 +272,7 @@ SwaggerBootstrapUi.prototype.initRequestParameters = function () {
  */
 SwaggerBootstrapUi.prototype.initSettings = function () {
   var that = this;
-  that.log('本地Settings初始化');
+  that.log('Local Settings initialization');
   // 添加对knife4j-front版本的支持,静态版本不提供配置
   if (that.configSupport) {
     that.configInit();
@@ -390,7 +390,7 @@ SwaggerBootstrapUi.prototype.analysisGroup = function () {
       // 创建分组元素
       that.createGroupElement();
     }, err => {
-      message.error('Knife4j文档请求异常');
+      message.error('Knife4j Document request exception');
       that.error(err);
     })
   } catch (err) {
@@ -411,7 +411,7 @@ SwaggerBootstrapUi.prototype.analysisSpringDocOpenApiGroupSuccess = function (da
   } else {
     groupData = data;
   }
-  that.log('响应分组json数据');
+  that.log('Response grouped json data');
   that.log(groupData);
   var serviceOptions = [];
   var allGroupIds = [];
@@ -554,7 +554,7 @@ SwaggerBootstrapUi.prototype.analysisGroupSuccess = function (data) {
   } else {
     groupData = data;
   }
-  that.log('响应分组json数据');
+  that.log('Response grouped json data');
   that.log(groupData);
   var serviceOptions = [];
   var allGroupIds = [];
@@ -689,7 +689,7 @@ SwaggerBootstrapUi.prototype.createGroupElement = function () {
       var gpName = urlParams.groupName;
       if (KUtils.checkUndefined(gpName) && gpName != '') {
         let selectInstance = that.selectInstanceByGroupName(gpName);
-        that.log('包含分组名称');
+        that.log('Contains group name');
         that.log(selectInstance);
         // 双向绑定下拉框的服务选项
         // that.$Vue.defaultServiceOption = selectInstance.id;
@@ -787,7 +787,7 @@ SwaggerBootstrapUi.prototype.analysisApi = function (instance) {
       that.ajax(requestConfig, data => {
         that.analysisApiSuccess(data);
       }, err => {
-        message.error('Knife4j文档请求异常');
+        message.error('Knife4j Document request exception');
         that.error(err);
       })
       /*  DebugAxios.create().request({
@@ -1034,7 +1034,7 @@ SwaggerBootstrapUi.prototype.openSettings = function (data) {
       that.settings = mergeSetting;
       that.localStore.setItem(Constants.globalSettingsKey, mergeSetting);
       // 设置i18n
-      var i18n = KUtils.getValue(mergeSetting, 'language', 'zh-CN', true);
+      var i18n = KUtils.getValue(mergeSetting, 'language', 'en-US', true);
       this.localStore.setItem(Constants.globalI18nCache, i18n);
       setTimeout(() => {
         if (KUtils.checkUndefined(that.i18nVue)) {
@@ -1099,7 +1099,7 @@ SwaggerBootstrapUi.prototype.openV3Settings = function (data) {
         that.settings = mergeSetting;
         that.localStore.setItem(Constants.globalSettingsKey, mergeSetting);
         // 设置i18n
-        var i18n = KUtils.getValue(mergeSetting, 'language', 'zh-CN', true);
+        var i18n = KUtils.getValue(mergeSetting, 'language', 'en-US', true);
         this.localStore.setItem(Constants.globalI18nCache, i18n);
         setTimeout(() => {
           if (KUtils.checkUndefined(that.i18nVue)) {
@@ -1533,7 +1533,7 @@ SwaggerBootstrapUi.prototype.analysisDefinitionAsyncOAS2 = function (menu, swud,
                           propValue = {
                             'additionalProperties1': addTempValue
                           };
-                          that.log('解析map-=完毕：')
+                          that.log('Parsing map-=completed：')
                           that.log(propValue);
                           spropObj.type = addrefType;
                           spropObj.refType = addrefType;
@@ -1562,7 +1562,7 @@ SwaggerBootstrapUi.prototype.analysisDefinitionAsyncOAS2 = function (menu, swud,
                           propValue = {
                             'additionalProperties1': tempAddValue
                           };
-                          that.log('解析map-=完毕：');
+                          that.log('Parsing map-=completed：');
                           that.log(propValue);
                           spropObj.type = 'array';
                           spropObj.refType = addrefType;
@@ -1827,7 +1827,7 @@ SwaggerBootstrapUi.prototype.analysisDefinitionAsyncOAS3 = function (menu, swud,
                           propValue = {
                             'additionalProperties1': addTempValue
                           };
-                          that.log('解析map-=完毕：');
+                          that.log('Parsing map-=completed：');
                           that.log(propValue);
                           spropObj.type = addrefType;
                           spropObj.refType = addrefType;
@@ -1856,7 +1856,7 @@ SwaggerBootstrapUi.prototype.analysisDefinitionAsyncOAS3 = function (menu, swud,
                           propValue = {
                             'additionalProperties1': tempAddValue
                           };
-                          that.log('解析map-=完毕：');
+                          that.log('Parsing map-=completed：');
                           that.log(propValue);
                           spropObj.type = 'array';
                           spropObj.refType = addrefType;

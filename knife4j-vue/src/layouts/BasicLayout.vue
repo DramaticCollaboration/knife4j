@@ -215,7 +215,7 @@ export default {
     getI18nFromUrl() {
       var param = this.$route.params;
       var include = false;
-      var i18n = "zh-CN";
+      var i18n = "en-US";
       if (KUtils.checkUndefined(param)) {
         var i18nFromUrl = param["i18n"];
         if (KUtils.checkUndefined(i18nFromUrl)) {

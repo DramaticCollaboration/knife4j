@@ -14,13 +14,13 @@
       <a-row class="knife4j-api-row">
         <a-col :span="12">
           <a-row>
-            <a-col class="api-basic-title" :span="6">请求数据类型</a-col>
+            <a-col class="api-basic-title" :span="6">Request data type</a-col>
             {{ api.consumes }}
           </a-row>
         </a-col>
         <a-col :span="12">
           <a-row>
-            <a-col class="api-basic-title" :span="6">响应数据类型</a-col>
+            <a-col class="api-basic-title" :span="6">Response data type</a-col>
             {{ api.produces }}
           </a-row>
         </a-col>
@@ -30,20 +30,20 @@
     <!--接口描述-->
     <div v-if="api.description">
       <div class="api-title">
-        接口描述
+        Interface description
       </div>
       <div v-if="api.description" v-html="api.description" class="api-body-desc"></div>
     </div>
     <!--请求示例-->
     <div v-if="api.requestValue">
       <div class="api-title">
-        请求示例
+        Request example
       </div>
       <pre class="api-editor-show" v-html="formaterJson(api.requestValue)"></pre>
       <!-- <editor-show :value="api.requestValue"></editor-show> -->
     </div>
     <div class="api-title">
-      请求参数
+      Request parameters
     </div>
     <a-table defaultExpandAllRows :columns="columns" :dataSource="reqParameters" :rowKey="genUnionTableKey" size="small"
       :pagination="page">
@@ -85,13 +85,13 @@
           </div>
           <!--响应参数-->
           <div class="api-title">
-            响应参数
+            Response parameters
           </div>
           <a-table :defaultExpandAllRows="expanRows" :columns="responseParametersColumns" :dataSource="resp.data"
             rowKey="id" size="small" :pagination="page">
           </a-table>
           <div class="api-title">
-            响应示例
+            Response example
           </div>
           <div class="api-editor-show" v-if="resp.responseBasicType">
             {{ resp.responseText }}
@@ -106,7 +106,7 @@
       <!--判断响应头-->
       <div v-if="api.responseHeaderParameters">
         <div class="api-title">
-          响应Header
+          Response Header
         </div>
         <a-table :defaultExpandAllRows="expanRows" :columns="responseHeaderColumns"
           :dataSource="api.responseHeaderParameters" rowKey="id" size="small" :pagination="page">
@@ -114,13 +114,13 @@
       </div>
       <!--响应参数-->
       <div class="api-title">
-        响应参数
+        Response parameters
       </div>
       <a-table :defaultExpandAllRows="expanRows" :columns="responseParametersColumns" :dataSource="multipData.data"
         rowKey="id" size="small" :pagination="page">
       </a-table>
       <div class="api-title">
-        响应示例
+        Response example
       </div>
       <div class="api-editor-show" v-if="multipData.responseBasicType">
         {{ multipData.responseText }}
@@ -139,27 +139,27 @@ import EditorShow from "./EditorShow"; */
 // 请求参数table-header
 const requestcolumns = [
   {
-    title: "参数名称",
+    title: "Parameter name",
     dataIndex: "name",
     width: "30%"
   },
   {
-    title: "参数说明",
+    title: "Parameter description",
     dataIndex: "description",
     width: "25%"
   },
   {
-    title: "请求类型",
+    title: "Request type",
     dataIndex: "in",
     scopedSlots: { customRender: "typeTemplate" }
   },
   {
-    title: "是否必须",
+    title: "Required",
     dataIndex: "require",
     scopedSlots: { customRender: "requireTemplate" }
   },
   {
-    title: "数据类型",
+    title: "Data type",
     dataIndex: "type",
     scopedSlots: { customRender: "datatypeTemplate" }
   },
@@ -172,12 +172,12 @@ const requestcolumns = [
 // 响应状态table-header
 const responseStatuscolumns = [
   {
-    title: "状态码",
+    title: "Status code",
     dataIndex: "code",
     width: "20%"
   },
   {
-    title: "说明",
+    title: "Description",
     dataIndex: "description",
     width: "55%",
     scopedSlots: { customRender: "descriptionTemplate" }
@@ -190,33 +190,33 @@ const responseStatuscolumns = [
 // 响应头-header
 const responseHeaderColumns = [
   {
-    title: "参数名称",
+    title: "Parameter name",
     dataIndex: "name",
     width: "30%"
   },
   {
-    title: "参数说明",
+    title: "Parameter description",
     dataIndex: "description",
     width: "55%"
   },
   {
-    title: "数据类型",
+    title: "Data type",
     dataIndex: "type"
   }
 ];
 const responseParametersColumns = [
   {
-    title: "参数名称",
+    title: "Parameter name",
     dataIndex: "name",
     width: "35%"
   },
   {
-    title: "参数说明",
+    title: "Parameter description",
     dataIndex: "description",
     width: "40%"
   },
   {
-    title: "类型",
+    title: "Type",
     dataIndex: "type"
   },
   {

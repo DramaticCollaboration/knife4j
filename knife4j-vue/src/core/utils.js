@@ -955,7 +955,7 @@ const utils = {
       }
     }
     if (this.checkUndefined(enumCollection)) {
-      return "可用值:" + enumCollection.join(",");
+      return "Available values:" + enumCollection.join(",");
     }
   }
 }

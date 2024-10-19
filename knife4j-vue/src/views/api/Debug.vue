@@ -25,10 +25,10 @@
                   </a-select>
                 </template>
               </a-input>
-              <a-button v-html="$t('debug.send')" class="knife4j-api-send" type="primary" @click="sendRestfulApi">发 送
+              <a-button v-html="$t('debug.send')" class="knife4j-api-send" type="primary" @click="sendRestfulApi">Send
               </a-button>
-              <a-button v-if="enableReloadCacheParameter" @click="reloadCacheParameter">刷新变量</a-button>
-              <a-button @click="resetCacheParameter">重置</a-button>
+              <a-button v-if="enableReloadCacheParameter" @click="reloadCacheParameter">Refresh variables</a-button>
+              <a-button @click="resetCacheParameter">Reset</a-button>
             </a-input-group>
           </a-col>
         </a-row>
@@ -39,7 +39,7 @@
                 <span>
                   <a-tag v-if="headerCountFlag" class="knife4j-debug-param-count">{{
                     headerCount
-                  }}</a-tag><span v-html="$t('debug.headers')">请求头部</span>
+                  }}</a-tag><span v-html="$t('debug.headers')">Request header</span>
                 </span>
               </template>
               <a-table v-if="headerTableFlag" bordered size="small" :rowSelection="rowSelection" :columns="headerColumn"
@@ -70,7 +70,7 @@
                 </template>
                 <a-row slot="operation" slot-scope="text, record">
                   <a-button v-html="$t('debug.tableHeader.holderDel')" type="link" v-if="!record.new"
-                    @click="headerDelete(record)">删除</a-button>
+                    @click="headerDelete(record)">Delete</a-button>
                 </a-row>
               </a-table>
             </a-tab-pane>
@@ -160,14 +160,14 @@
                           <a-input style="width: 80%" :class="'knife4j-debug-param-require' + record.require"
                             :value="record.content" disabled />
                           <a-button v-html="$t('debug.form.upload')" @click="formFileUploadClick(record)"
-                            class="knife4j-api-send" style="width:80px;" type="primary">选择文件</a-button>
+                            class="knife4j-api-send" style="width:80px;" type="primary">Select file</a-button>
                         </a-input-group>
                       </div>
                     </div>
                   </template>
                   <a-row slot="operation" slot-scope="text, record">
                     <a-button v-html="$t('debug.tableHeader.holderDel')" type="link" v-if="!record.new"
-                      @click="formDelete(record)">删除</a-button>
+                      @click="formDelete(record)">Delete</a-button>
                   </a-row>
                 </a-table>
               </a-row>
@@ -196,7 +196,7 @@
                   </template>
                   <a-row slot="operation" slot-scope="text, record">
                     <a-button v-html="$t('debug.tableHeader.holderDel')" type="link" v-if="!record.new"
-                      @click="urlFormDelete(record)">删除</a-button>
+                      @click="urlFormDelete(record)">Delete</a-button>
                   </a-row>
                 </a-table>
               </a-row>
@@ -227,7 +227,7 @@
                     </template>
                     <a-row slot="operation" slot-scope="text, record">
                       <a-button v-html="$t('debug.tableHeader.holderDel')" type="link" v-if="!record.new"
-                        @click="rawFormDelete(record)">删除</a-button>
+                        @click="rawFormDelete(record)">Delete</a-button>
                     </a-row>
                   </a-table>
                 </a-row>
@@ -237,8 +237,8 @@
             </a-tab-pane>
             <a-tab-pane v-if="enableAfterScript" key="3" tab="AfterScript">
               <a-row style="height:25px;line-height:25px;">
-                关于AfterScript更详细的使用方法及介绍,请<a href="https://gitee.com/xiaoym/knife4j/wikis/AfterScript"
-                  target="_blank">参考文档</a>
+                For more detailed usage and introduction to AfterScript, please<a href="https://gitee.com/xiaoym/knife4j/wikis/AfterScript"
+                  target="_blank">Reference documentation</a>
               </a-row>
               <a-row>
                 <editor-script style="margin-top:5px;" :value="rawScript" @change="rawScriptChange"></editor-script>

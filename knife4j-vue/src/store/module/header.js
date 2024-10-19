@@ -6,7 +6,7 @@ const headers = {
   mutations: {
     SetCurrentUser: (state) => {
       state.userCurrent = {
-        name: '八一菜刀',
+        name: 'John Doe',
         avatar: ''
       }
     }

@@ -953,7 +953,7 @@ SwaggerBootstrapUi.prototype.analysisDefinition = function (menu) {
                         propValue = {
                           "additionalProperties1": addTempValue
                         }
-                        that.log("解析map-=完毕：")
+                        that.log("Parsing map-=completed：")
                         that.log(propValue);
                         spropObj.type = addrefType;
                         spropObj.refType = addrefType;
@@ -982,7 +982,7 @@ SwaggerBootstrapUi.prototype.analysisDefinition = function (menu) {
                         propValue = {
                           "additionalProperties1": tempAddValue
                         }
-                        that.log("解析map-=完毕：")
+                        that.log("Parsing map-=completed：")
                         that.log(propValue);
                         spropObj.type = "array";
                         spropObj.refType = addrefType;

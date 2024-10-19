@@ -2,7 +2,7 @@
   <a-layout-content class="knife4j-body-content">
     <a-row class="settingConfig">
       <a-row class="gptips" v-html="$t('message.settingTip')">
-        启用个性化配置后,接口Tab标签需关闭后重新打开或者刷新当前页面
+        After enabling personalized configuration, the interface Tab needs to be closed and reopened or the current page refreshed.
       </a-row>
     </a-row>
     <a-row class="settingConfig">

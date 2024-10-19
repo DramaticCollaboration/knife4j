@@ -106,7 +106,7 @@ OAS3SchemaPropertyReader.prototype.readBasicProperty = function (swud, instance,
           if (type == 'object') {
             if (propobj.hasOwnProperty('additionalProperties')) {
               var addpties = propobj['additionalProperties'];
-              instance.log('------解析map-=-----------additionalProperties,defName:' + name);
+              instance.log('------Analyze map-=-----------additionalProperties,defName:' + name);
               // 判断是否additionalProperties中还包含additionalProperties属性
               let addtionalClassFinder = new Knife4jOAS2AdditionalModelClassFinder(addpties, oas2);
               //var addtionalName = this.deepAdditionalProperties(addpties, oas2);
@@ -150,7 +150,7 @@ OAS3SchemaPropertyReader.prototype.readBasicProperty = function (swud, instance,
                   propValue = {
                     'additionalProperties1': addTempValue
                   };
-                  instance.log('解析map-=完毕：');
+                  instance.log('Parsing map-=completed：');
                   instance.log(propValue);
                   spropObj.type = addrefType;
                   spropObj.refType = addrefType;
@@ -179,7 +179,7 @@ OAS3SchemaPropertyReader.prototype.readBasicProperty = function (swud, instance,
                   propValue = {
                     'additionalProperties1': tempAddValue
                   };
-                  instance.log('解析map-=完毕：');
+                  instance.log('Parsing map-=completed：');
                   instance.log(propValue);
                   spropObj.type = 'array';
                   spropObj.refType = addrefType;
@@ -401,7 +401,7 @@ OAS3SchemaPropertyReader.prototype.readProperty = function (originalSchema, swud
                   propValue = {
                     'additionalProperties1': addTempValue
                   };
-                  instance.log('解析map-=完毕：');
+                  instance.log('Parsing map-=completed：');
                   instance.log(propValue);
                   spropObj.type = addrefType;
                   spropObj.refType = addrefType;
@@ -430,7 +430,7 @@ OAS3SchemaPropertyReader.prototype.readProperty = function (originalSchema, swud
                   propValue = {
                     'additionalProperties1': tempAddValue
                   };
-                  instance.log('解析map-=完毕：');
+                  instance.log('Parsing map-=completed：');
                   instance.log(propValue);
                   spropObj.type = 'array';
                   spropObj.refType = addrefType;

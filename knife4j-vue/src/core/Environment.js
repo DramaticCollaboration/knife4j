@@ -125,7 +125,7 @@ var KEnvironment = function (settings) {
                 }
                 tmpVal[gid] = tmpValue;
               }
-              window.console.log("更新value")
+              window.console.log("update value")
               window.console.log(tmpVal)
             })
             // 存储

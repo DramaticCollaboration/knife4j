@@ -1,6 +1,6 @@
 <template>
   <a-row>
-    我是OAuth2回调页面
+    OAuth2 callback page
   </a-row>
 </template>
 <script>
@@ -11,7 +11,7 @@ import KUtils from "@/core/utils";
 
 export default {
   name: "OAuth2",
-  components: { 
+  components: {
   },
   data() {
     return {
@@ -29,7 +29,7 @@ export default {
   beforeCreate(){
   },
   created() {
-     
+
   },
   methods: {
   }

@@ -2,11 +2,11 @@
   <div class="document">
     <a-row style="margin-top:10px;">
       <a-button type="primary" :id="'btnCopyOpenApi' + api.id">
-        <a-icon type="copy" /><span v-html="$t('open.copy')"> 复 制 </span>
+        <a-icon type="copy" /><span v-html="$t('open.copy')"> Copy </span>
       </a-button>
 
       <a-button style="margin-left:10px;" @click="triggerDownloadOpen">
-        <a-icon type="download" /> <span v-html="$t('open.download')"> 下 载 </span>
+        <a-icon type="download" /> <span v-html="$t('open.download')"> Download </span>
       </a-button>
     </a-row>
     <a-row style="margin-top:10px;" :id="'knife4jDocumentOpenApiShowEditor'">

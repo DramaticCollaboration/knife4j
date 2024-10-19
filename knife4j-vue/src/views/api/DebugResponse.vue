@@ -6,13 +6,13 @@
           <a-row v-if="responseStatus" class="knife4j-debug-status">
             <span>
               <a-checkbox :defaultChecked="responseFieldDescriptionChecked" @change="showFieldDesChange"><span
-                  style="color: #919191;" v-html="$t('debug.response.showDes')">显示说明</span></a-checkbox>
+                  style="color: #919191;" v-html="$t('debug.response.showDes')">Show description</span></a-checkbox>
             </span>
-            <span class="key" v-html="$t('debug.response.code')">响应码:</span>
+            <span class="key" v-html="$t('debug.response.code')">Response code:</span>
             <span class="value">{{ responseStatus.code }}</span>
-            <span class="key" v-html="$t('debug.response.cost')">耗时:</span>
+            <span class="key" v-html="$t('debug.response.cost')">Time:</span>
             <span class="value">{{ responseStatus.cost }}</span>
-            <span class="key" v-html="$t('debug.response.size')">大小:</span>
+            <span class="key" v-html="$t('debug.response.size')">Size:</span>
             <span class="value">{{ responseSizeText }} </span>
           </a-row>
         </template>
@@ -24,7 +24,7 @@
               </div>
               <div v-else>
                 <a-button type="link" :href="responseContent.blobUrl" :download="responseContent.blobFileName"
-                  v-html="$t('debug.response.download')">下载文件</a-button>
+                  v-html="$t('debug.response.download')">Download file</a-button>
               </div>
             </a-row>
             <a-row :id="'responseEditorContent' + api.id" v-else>
@@ -37,7 +37,7 @@
         <a-tab-pane tab="Raw" key="debugRaw" forceRender>
           <a-row class="knife4j-debug-response-mt">
             <a-button :id="'btnDebugCopyRaw' + api.id" type="primary">
-              <a-icon type="copy" /> <span v-html="$t('debug.response.copy')">复制</span>
+              <a-icon type="copy" /> <span v-html="$t('debug.response.copy')">Copy</span>
             </a-button>
           </a-row>
           <a-row class="knife4j-debug-response-mt">
@@ -54,7 +54,7 @@
         <a-tab-pane tab="Curl" key="debugCurl">
           <a-row class="knife4j-debug-response-mt">
             <a-button :id="'btnDebugCopyCurl' + api.id" type="primary">
-              <a-icon type="copy" /> <span v-html="$t('debug.response.copy')">复制</span>
+              <a-icon type="copy" /> <span v-html="$t('debug.response.copy')">Copy</span>
             </a-button>
           </a-row>
           <a-row class="knife4j-debug-response-mt">
