@@ -106,9 +106,9 @@ export default {
   },
   beforeCreate() { },
   created() {
-    //this.initSpringDocOpenApi();
+    this.initSpringDocOpenApi();
     //this.initKnife4jSpringUi();
-    this.initKnife4jInsight();
+    // this.initKnife4jInsight();
     //this.initKnife4jJFinal();
     //this.initKnife4jFront();
     this.initI18n();
@@ -161,7 +161,7 @@ export default {
     swaggerCurrentInstance() {
       var title = this.swaggerCurrentInstance.title;
       if (!title) {
-        title = "Knife4j 接口文档";
+        title = "Knife4j Interface documentation";
       }
       this.documentTitle = title;
       window.document.title = title;
@@ -405,7 +405,7 @@ export default {
       })
     },
     initKnife4jInsight() {
-      //该版本是最终打包到knife4j-spring-ui的模块,默认是调用该方法
+      //This version is the module that is finally packaged into knife4j-spring-ui. This method is called by default.
       var that = this;
       var i18nParams = this.getI18nFromUrl();
       var tmpI18n = i18nParams.i18n;

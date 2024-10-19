@@ -93,7 +93,10 @@ function SwaggerBootstrapUi(options) {
     const index = path.lastIndexOf('/');
     const basePath = path.length == index + 1 ? path : path.substring(0, index);
     //   swagger请求api地址
-    if (basePath != '' && basePath != '/') {
+    if(basePath.endsWith("/"))
+    {
+      this.url = options.url || 'v3/api-docs/swagger-config';
+    }else if (basePath != '' && basePath != '/') {
       this.url = options.url || basePath + '/v3/api-docs/swagger-config';
     } else {
       this.url = options.url || 'v3/api-docs/swagger-config';

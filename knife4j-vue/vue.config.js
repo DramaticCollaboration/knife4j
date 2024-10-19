@@ -12,7 +12,7 @@ module.exports = {
   assetsDir: "webjars",
   outputDir: "dist",
   lintOnSave: false,
-  productionSourceMap: false,
+  productionSourceMap: true,
   indexPath: "doc.html",
   css: {
     loaderOptions: {
@@ -36,6 +36,7 @@ module.exports = {
     }
   },
   configureWebpack: {
+    devtool: 'source-map',
     optimization: {
       minimizer: [
         new TerserPlugin({
